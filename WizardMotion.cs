@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class WizardMotion : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Animator animator;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        //Меняем значения параметров velX и velY согласно введённым пользователем значениям
+        animator.SetFloat("VelX", Input.GetAxis("Horizontal"), 0.1f, Time.deltaTime);
+        animator.SetFloat("VelY", Input.GetAxis("Vertical"), 0.1f, Time.deltaTime);
     }
 }
